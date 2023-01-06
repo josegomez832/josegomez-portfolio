@@ -1,4 +1,3 @@
 [build]
   command = "npm run build"
-  publish="josegomez-portfolio/build"
-  base = "josegomez-portfolio"
+  publish="build/"
