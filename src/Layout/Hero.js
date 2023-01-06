@@ -1,5 +1,5 @@
 import React from 'react'
-import resume from './../assets/Jose_Gomez_Frontend-Developer.pdf'
+import resume from './../assets/Jose_Gomez_Front_End_Developer.pdf'
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import backgroundImage from './../assets/portfolio-hero.jpg'
