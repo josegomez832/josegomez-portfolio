@@ -6,7 +6,6 @@ import Footer from '../Layout/Footer'
 export default function Project() {
     const [project, setProject] = useState(null)
     let { slug } = useParams();
-    console.log(slug);
     const query = `
 query GetProject($slug: String!) {
     personalPortfolioProjectsCollection(limit:1, where:{url:$slug}){
@@ -64,7 +63,7 @@ useEffect(() => {
         setProject(data.personalPortfolioProjectsCollection);
       });
   }, [slug]);
-  console.log(project);
+
   if(!project){
     return "Loading Project...";
   }
@@ -87,7 +86,10 @@ useEffect(() => {
               <img src={project.items[0].singleProjectImagesCollection.items[0].url} alt={project.items[0].projectImage.title} />
               <div className='action-buttons'>
                   <a href={project.items[0].projectLink} target="_blank" rel="noreferrer" className="btn btn-primary">View Project Site</a>
-                  <a href={project.items[0].githubRepositoryLink} target="_blank" rel="noreferrer" className="btn btn-secondary">View Github Repo</a>
+                  
+                    {project.items[0].githubRepositoryLink !== null ? 
+                      <a href={project.items[0].githubRepositoryLink} target="_blank" rel="noreferrer" className="btn btn-secondary">View Github Repo</a> : null
+                    }
               </div>
             </div>
           </div>
